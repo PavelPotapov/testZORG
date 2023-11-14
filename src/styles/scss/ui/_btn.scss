@@ -1,0 +1,25 @@
+.btn {
+	width: 232px;
+	height: 68.505px;
+	fill: linear-gradient(180deg, #b3ef00 25.49%, #a6dd00 80.48%);
+	box-shadow: 0px 4px 0px 5.10056px rgba(250, 255, 0, 0.5) inset;
+	color: #3c6100;
+	text-align: center;
+	text-shadow: 0px 3px 0px #d7f701;
+	font-family: $font-accent;
+	font-size: 42.574px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 0.639px;
+	text-transform: uppercase;
+	background-image: url("../../../public/img/btn.svg");
+
+
+	@media screen and (max-width: 700px){
+		width: 150px;
+		font-size: 25px;		
+	}
+
+	
+}

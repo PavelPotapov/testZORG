@@ -1,0 +1,62 @@
+.block {
+	display: block;
+}
+
+.mb30 {
+	margin-bottom: 30px;
+}
+
+.mb5 {
+	margin-bottom: 5px;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.disabled-scroll {
+	overflow-y: hidden;
+}
+
+/* screen reader only */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	-webkit-clip-path: inset(100%);
+	clip-path: inset(100%);
+}
+
+/* CONTAINER */
+.container {
+	width: 100%;
+	max-width: 1620px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+// * {
+// 	outline: 1px solid red;
+// }
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	background-color: $color-black;
+}
+
+.accent-text {
+	color: $color-accent;
+}
+
+@include laptop {
+	.container {
+		padding: 0px 30px;
+	}
+}

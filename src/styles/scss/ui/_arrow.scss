@@ -1,0 +1,92 @@
+.arrow {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 40px;
+
+	@media screen and (max-width: 1671px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	&-btn {
+		grid-column: 6 / 8;
+		@media screen and (max-width: 1671px) {
+			grid-column: 2 / 3;
+			justify-self: center;
+		}
+	}
+
+	&-info {
+		color: #9c0;
+		transform: rotate(-28.671deg);
+		grid-column: 4 / 6;
+		justify-self: end;
+		text-align: right;
+		font-family: $font-second;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			bottom: -50%;
+			transform: rotate(28.431deg) translateX(25%);
+			background-repeat: no-repeat;
+			background-image: url("../../../public/img/arrow.svg");
+			@media screen and (max-width: 600px) {
+				font-size: 16px;
+				background-size: contain;
+				bottom: -55%;
+				width: 80%;
+			}
+			@media screen and (max-width: 445px) {
+				background-size: contain;
+				bottom: -45%;
+				width: 80%;
+			}
+		}
+		@media screen and (max-width: 1671px) {
+			grid-column: 1 / 2;
+		}
+
+		@media screen and (max-width: 745px) {
+			font-size: 28px;
+			background-size: contain;
+			justify-self: start;
+		}
+
+		@media screen and (max-width: 600px) {
+			font-size: 22px;
+		}
+
+		@media screen and (max-width: 445px) {
+			font-size: 16px;
+		}
+	}
+
+	&-info--right {
+		color: #9c0;
+		transform: rotate(28.671deg);
+		text-align: right;
+		font-family: $font-second;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		&::after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			bottom: -50%;
+			transform: rotate(-28.431deg) translateX(0%);
+			background-repeat: no-repeat;
+			background-image: url("../../../public/img/arrow-right.svg");
+		}
+	}
+}

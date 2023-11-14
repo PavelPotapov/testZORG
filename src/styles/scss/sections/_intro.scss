@@ -1,0 +1,146 @@
+.intro {
+	text-align: center;
+	color: $color-white;
+	font-family: $font-main;
+	position: relative;
+
+	&::before {
+		content: "";
+		width: 12vw;
+		height: 100vw;
+		position: absolute;
+		left: 0;
+		top: -8vw;
+		background-image: url("../../../public/img/circle-left.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		z-index: -1;
+	}
+
+	&__title {
+		font-size: 48.519px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%;
+		margin-bottom: 26px;
+	}
+
+	&__subtitle {
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%; /* 24.125px */
+		width: 100%;
+		max-width: 818px;
+		margin: 0 auto;
+		margin-bottom: 109px;
+	}
+
+	&__about-us {
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
+		display: inline-block;
+		position: relative;
+		margin-bottom: 106px;
+
+		&::before {
+			content: "";
+			width: 70px;
+			height: 94px;
+			position: absolute;
+			left: calc(-70px - 40px);
+			top: -50%;
+			background-image: url("../../../public/img/map.svg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&::after {
+			content: "";
+			width: 30vw;
+			height: 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			transform: translateX(calc(-125%));
+			background-image: url("../../../public/img/line-left.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			@media screen and (max-width: 1920px) {
+				width: 30vw;
+			}
+
+			@media screen and (max-width: 1488px) {
+				width: 25vw;
+				transform: translateX(calc(-138%));
+			}
+
+			@media screen and (max-width: 1130px) {
+				width: 22vw;
+				transform: translateX(-154%);
+			}
+			@media screen and (max-width: 970px) {
+				width: 22vw;
+				transform: translateX(-154%);
+			}
+			@media screen and (max-width: 768px) {
+				width: 17vw;
+				transform: translateX(-190%);
+			}
+
+			@media screen and (max-width: 646px) {
+				transform: translateX(-210%);
+			}
+
+			@media screen and (max-width: 548px) {
+				width: 20vw;
+			}
+		}
+	}
+
+	&__zorg-games {
+		display: flex;
+		padding-left: 167px;
+		justify-content: space-between;
+		gap: 20px;
+		margin-bottom: 50px;
+		@media screen and (max-width: 1671px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 35px;
+			padding-left: 0;
+		}
+	}
+
+	&__zorg-games-title {
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
+		margin-bottom: 33px;
+	}
+
+	&__zorg-games-subtitle {
+		width: 100%;
+		max-width: 540px;
+	}
+}
+
+.team-img {
+	overflow: hidden;
+	width: 100%;
+	max-width: 768px;
+	max-height: 552px;
+	border-radius: 40px;
+	border: 6px solid #9c0;
+	// background-image: url("../../../public/img/team.png");
+	// background-size: cover;
+	box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+	transform: rotate(4.687deg);
+}
+
+.team-img img {
+	transform: scale(1.2);
+}
