@@ -47,6 +47,7 @@ $size-laptop-menu: 408px;
 
 	&.active {
 		transform: translateX(-$size-laptop-menu);
+		visibility: visible;
 	}
 
 	&__item {

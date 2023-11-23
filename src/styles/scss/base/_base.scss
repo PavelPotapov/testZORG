@@ -37,6 +37,10 @@
 	max-width: 1620px;
 	margin: 0 auto;
 	padding: 0;
+
+	@media screen and (max-width: 1620px) {
+		padding: 0 30px;
+	}
 }
 
 // * {

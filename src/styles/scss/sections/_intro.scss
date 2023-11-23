@@ -1,8 +1,14 @@
 .intro {
+	user-select: none;
 	text-align: center;
 	color: $color-white;
 	font-family: $font-main;
 	position: relative;
+	margin-bottom: 150px;
+
+	@media screen and (max-width: 1000px) {
+		margin-bottom: 100px;
+	}
 
 	&::before {
 		content: "";
@@ -44,6 +50,10 @@
 		display: inline-block;
 		position: relative;
 		margin-bottom: 106px;
+
+		@media screen and (max-width: 700px) {
+			margin-bottom: 50px;
+		}
 
 		&::before {
 			content: "";
@@ -135,12 +145,42 @@
 	max-height: 552px;
 	border-radius: 40px;
 	border: 6px solid #9c0;
-	// background-image: url("../../../public/img/team.png");
-	// background-size: cover;
 	box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
 	transform: rotate(4.687deg);
+	// animation-name: show-team-img;
+	// animation-fill-mode: forwards;
+	// animation-duration: 1s;
+	// animation-delay: 1s;
+
+	&:hover {
+		border: 5.628px dashed #9c0;
+	}
 }
 
 .team-img img {
+	cursor: pointer;
 	transform: scale(1.2);
+	transition: transform 0.5s ease;
+	animation-name: show-team-img;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 1s;
+}
+
+@keyframes show-team-img {
+	from {
+		transform: scale(1.2);
+	}
+	to {
+		transform: scale(1.4);
+	}
+}
+
+@keyframes show-team {
+	from {
+		border: 6px solid #9c0;
+	}
+	to {
+		border: 5.628px dashed #9c0;
+	}
 }

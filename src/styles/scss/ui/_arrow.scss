@@ -7,11 +7,21 @@
 		grid-template-columns: repeat(3, 1fr);
 	}
 
+	@media screen and (max-width: 400px) {
+		grid-template-columns: 85px 1fr auto;
+		column-gap: 0px;
+	}
+
 	&-btn {
 		grid-column: 6 / 8;
 		@media screen and (max-width: 1671px) {
 			grid-column: 2 / 3;
 			justify-self: center;
+		}
+
+		@media screen and (max-width: 400px) {
+			grid-column: 2 / 3;
+			justify-self: start;
 		}
 	}
 
@@ -29,7 +39,7 @@
 
 		&::after {
 			content: "";
-			width: 100%;
+			width: 106%;
 			height: 100%;
 			position: absolute;
 			left: 0;
@@ -43,10 +53,11 @@
 				bottom: -55%;
 				width: 80%;
 			}
-			@media screen and (max-width: 445px) {
+			@media screen and (max-width: 400px) {
 				background-size: contain;
-				bottom: -45%;
+				bottom: -30%;
 				width: 80%;
+				left: -22px;
 			}
 		}
 		@media screen and (max-width: 1671px) {

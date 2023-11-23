@@ -40,3 +40,7 @@
 .swiper-wrapper {
 	perspective: 50px;
 }
+
+.swiper-slide img {
+	object-fit: cover;
+}

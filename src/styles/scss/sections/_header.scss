@@ -4,7 +4,7 @@
 
 .header {
 	height: 75px;
-	padding: 22px 11px;
+	padding: 11px 22px;
 	display: flex;
 	align-items: center;
 	@media screen and (max-width: 1000px) {
@@ -26,8 +26,10 @@
 	justify-content: center;
 	flex-basis: 100%;
 	align-items: center;
+	height: 100%;
 
 	&__list {
+		height: 100%;
 		display: flex;
 		gap: 50px;
 		@media screen and (max-width: 1000px) {
@@ -45,8 +47,27 @@
 		transition: color 0.3s;
 		user-select: none;
 		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+
+		&::before {
+			position: absolute;
+			z-index: -1;
+			content: "";
+			width: calc(100% + 50px);
+			height: 75px;
+			transform: skewX(-10deg);
+			background-color: $color-accent;
+			opacity: 0;
+		}
+
 		&:hover {
-			color: $color-accent;
+			color: $color-black2;
+			&::before {
+				opacity: 1;
+			}
 		}
 	}
 }

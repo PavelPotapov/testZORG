@@ -1,0 +1,263 @@
+.carrier {
+	position: relative;
+	font-family: $font-main;
+	color: $color-white;
+	margin-bottom: 73px;
+
+	&__title {
+		margin-left: 50%;
+		transform: translateX(-50%);
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
+		display: inline-block;
+		position: relative;
+		margin-bottom: 96px;
+
+		@media screen and (max-width: 1000px) {
+			margin-bottom: 50px;
+		}
+
+		&::before {
+			content: "";
+			width: 70px;
+			height: 94px;
+			position: absolute;
+			left: calc(-70px - 40px);
+			top: -50%;
+			background-image: url("../../../public/img/map.svg");
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			@media screen and (max-width: 700px) {
+				left: -90px;
+				top: -98%;
+			}
+		}
+
+		&::after {
+			content: "";
+			width: 37vw;
+			height: 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			transform: translateX(calc(-125%));
+			background-image: url("../../../public/img/line-left.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			@media screen and (max-width: 1920px) {
+				width: 38vw;
+			}
+
+			@media screen and (max-width: 1488px) {
+				width: 33vw;
+				transform: translateX(calc(-138%));
+			}
+
+			@media screen and (max-width: 1130px) {
+				width: 30vw;
+				transform: translateX(-154%);
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 20vw;
+				transform: translateX(-190%);
+			}
+
+			@media screen and (max-width: 646px) {
+				transform: translateX(-210%);
+			}
+
+			@media screen and (max-width: 548px) {
+				display: none;
+			}
+		}
+	}
+
+	&__subtitle {
+		color: $color-white;
+		text-align: center;
+		font-family: $font-main;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%;
+		max-width: 746px;
+		margin: 0 auto;
+		margin-bottom: 67px;
+		@media screen and (max-width: 1000px) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&::before {
+		content: "";
+		width: 12vw;
+		height: 80vw;
+		position: absolute;
+		left: 0;
+		top: -8vw;
+		background-image: url("../../../public/img/circle-left.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		z-index: -1;
+	}
+
+	&__vacancy {
+		padding: 0px 114px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 35px;
+		justify-content: center;
+		margin-bottom: 174px;
+		@media screen and (max-width: 1000px) {
+			padding: 0px 30px;
+			margin-bottom: 109px;
+		}
+		@media screen and (max-width: 600px) {
+			padding: 0px 0px;
+		}
+	}
+
+	&__vacancy-card {
+		padding: 30px 27px;
+		display: flex;
+		align-items: flex-end;
+		width: min(438.866px, 85vw);
+		height: 267.213px;
+		border-radius: 17.696px;
+		background: $color-yellow;
+		box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.03);
+			// .carrier__vacancy-circle {
+			// 	& svg {
+			// 		fill: $color-accent;
+			// 	}
+			// }
+		}
+	}
+
+	&__vacancy-card-inner {
+		flex-grow: 1;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__vacancy-circle {
+		& svg {
+			fill: $color-black;
+		}
+	}
+
+	&__vacancy-card-title {
+		align-self: flex-end;
+		color: $color-black;
+		font-family: $font-main;
+		font-style: normal;
+		line-height: 200%;
+	}
+
+	&__vacancy-card-job-title {
+		font-size: 32px;
+		font-weight: 700;
+		margin-bottom: 5px;
+	}
+	&__vacancy-card-job-subtitle {
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		margin-bottom: 5px;
+	}
+
+	&__vacancy-card--more {
+		background: $color-gray;
+		box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+		flex-direction: column;
+		justify-content: end;
+		gap: 10px;
+	}
+
+	&__vacancy-card--more-title {
+		align-self: center;
+		color: $color-accent;
+		font-family: $font-main;
+		text-align: center;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
+	}
+
+	&__application {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 98px;
+		gap: 30px;
+
+		@media screen and (max-width: 1360px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 50px;
+			padding: 0;
+		}
+	}
+
+	&__application-form {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	&__application-personal {
+		font-weight: 700;
+		border-bottom: 1px solid $color-white;
+	}
+
+	&__application-input {
+		width: min(655px, 85vw);
+		height: 54px;
+		border-radius: 14px;
+		border: 1px solid $color-accent;
+		background: $color-black;
+		padding: 17px 20px;
+		&::placeholder {
+			color: $color-white;
+		}
+	}
+
+	&__application-text-area {
+		height: 166px;
+		margin-bottom: 10px;
+	}
+
+	&__application-checkbox {
+		@media screen and (max-width: 1360px) {
+			text-align: center;
+		}
+	}
+
+	&__application-submit {
+		border-radius: 19px;
+		background: rgba(60, 60, 60, 0.75);
+		box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+	}
+
+	&__application-submit {
+		border-radius: 19px;
+		background: rgba(60, 60, 60, 0.75);
+		box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+		width: min(400px, 100%);
+		height: 105px;
+		@media screen and (max-width: 1360px) {
+			align-self: center;
+		}
+	}
+}
