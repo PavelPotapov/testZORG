@@ -8,8 +8,12 @@ const swiper = new Swiper(".mySwiper", {
 	loop: true,
 	grabCursor: true,
 	spaceBetween: 10,
-	slidesPerView: 1.5,
+	slidesPerView: 1.2,
 	centeredSlides: true,
+	autoplay: {
+		delay: 1000, // время задержки между сменой слайдов (в миллисекундах)
+		disableOnInteraction: true, // отключение автопрокрутки при взаимодействии пользователя
+	},
 	pagination: {
 		el: ".swiper-pagination",
 		dynamicMainBullets: 5,
