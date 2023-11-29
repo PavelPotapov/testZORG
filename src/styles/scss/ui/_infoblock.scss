@@ -1,0 +1,65 @@
+.infoblock-container {
+	> :nth-child(odd) {
+		justify-content: flex-start;
+		@media screen and (max-width: 800px) {
+			flex-direction: column-reverse;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	> :nth-child(even) {
+		flex-direction: row-reverse;
+		text-align: right;
+		@media screen and (max-width: 800px) {
+			flex-direction: column-reverse;
+			align-items: center;
+			text-align: center;
+		}
+	}
+}
+
+.infoblock {
+	display: flex;
+	gap: 71px;
+	margin-bottom: 45px;
+
+	&__title {
+		color: $color-white;
+		font-family: $font-main;
+		font-size: clamp(22px, 4vw, 32px);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: 22px;
+	}
+
+	&__info {
+		width: 100%;
+		max-width: 818px;
+		align-self: center;
+	}
+
+	&__subtitle {
+		color: $color-white;
+		font-family: $font-main;
+		font-size: clamp(15px, 3vw, 20px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	@media screen and (max-width: 800px) {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	&--left {
+		justify-content: flex-start;
+	}
+
+	&--right {
+		flex-direction: row-reverse;
+		text-align: right;
+	}
+}

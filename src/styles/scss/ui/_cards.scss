@@ -28,6 +28,16 @@
 		}
 	}
 
+	&--w226 {
+		width: min(211px, 100%);
+		aspect-ratio: 1 / 1;
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	&--right {
 		overflow: hidden;
 		border-radius: 40px;

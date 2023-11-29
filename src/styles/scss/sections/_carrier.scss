@@ -96,7 +96,7 @@
 	&::before {
 		content: "";
 		width: 12vw;
-		height: 80vw;
+		height: 125%;
 		position: absolute;
 		left: 0;
 		top: -8vw;
@@ -104,6 +104,9 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		z-index: -1;
+		@media screen and (max-width: 1200px) {
+			height: 50%;
+		}
 	}
 
 	&__vacancy {

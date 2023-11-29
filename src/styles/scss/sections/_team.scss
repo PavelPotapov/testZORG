@@ -1,0 +1,224 @@
+.team {
+	user-select: none;
+	text-align: center;
+	position: relative;
+	color: $color-white;
+	padding-bottom: 153px;
+	@media screen and (max-width: 800px) {
+		padding-bottom: 90px;
+	}
+
+	&::before {
+		content: "";
+		width: 12vw;
+		height: 150%;
+		position: absolute;
+		left: 0;
+		top: -8vw;
+		background-image: url("../../../public/img/circle-left.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		z-index: -1;
+
+		@media screen and (max-width: 1620px) {
+			height: 100%;
+		}
+	}
+
+	&::after {
+		content: "";
+		width: 24vw;
+		height: 35%;
+		position: absolute;
+		right: 0;
+		bottom: 17%;
+		background-image: url("../../../public/img/loop.svg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: -1;
+		@media screen and (max-width: 1400px) {
+			width: 37vw;
+		}
+	}
+
+	&__about-us {
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
+		display: inline-block;
+		position: relative;
+		margin-bottom: 106px;
+
+		@media screen and (max-width: 700px) {
+			margin-bottom: 50px;
+		}
+
+		&::before {
+			content: "";
+			width: 70px;
+			height: 94px;
+			position: absolute;
+			left: calc(-70px - 40px);
+			top: -50%;
+			background-image: url("../../../public/img/map.svg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&::after {
+			content: "";
+			width: 30vw;
+			height: 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			transform: translateX(calc(-125%));
+			background-image: url("../../../public/img/line-left.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			@media screen and (max-width: 1920px) {
+				width: 30vw;
+			}
+
+			@media screen and (max-width: 1488px) {
+				width: 25vw;
+				transform: translateX(calc(-138%));
+			}
+
+			@media screen and (max-width: 1130px) {
+				width: 22vw;
+				transform: translateX(-154%);
+			}
+			@media screen and (max-width: 970px) {
+				width: 22vw;
+				transform: translateX(-154%);
+			}
+			@media screen and (max-width: 768px) {
+				width: 17vw;
+				transform: translateX(-190%);
+			}
+
+			@media screen and (max-width: 646px) {
+				transform: translateX(-210%);
+			}
+
+			@media screen and (max-width: 548px) {
+				width: 20vw;
+			}
+		}
+	}
+
+	&__photo-cards {
+		display: flex;
+		min-height: 668px;
+		justify-content: center;
+		margin-bottom: 104px;
+		@media screen and (max-width: 1400px) {
+			flex-direction: column;
+			justify-items: center;
+		}
+	}
+
+	&__photo {
+		box-shadow: -7px -3px 41px 8px rgba(34, 60, 80, 0.2);
+		position: relative;
+		color: $color-black;
+		text-align: center;
+		font-family: $font-second;
+		font-size: 27.628px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		width: 100%;
+		max-width: 515px;
+		height: 100%;
+		min-height: 588px;
+		background-color: $color-white;
+		transform: rotate(3.741deg);
+		padding: 36px;
+		display: flex;
+		flex-direction: column;
+		@media screen and (max-width: 1626px) {
+			max-width: 430px;
+		}
+		@media screen and (max-width: 1400px) {
+			max-width: 515px;
+		}
+		@media screen and (max-width: 630px) {
+			min-height: auto;
+			aspect-ratio: 1 / 1;
+		}
+
+		&::before {
+			content: "";
+			width: 56px;
+			height: 67px;
+			background-image: url(".././../../public/img/studia/pin1.svg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: -5%;
+			left: 50%;
+		}
+		&--pin2 {
+			&::before {
+				content: "";
+				width: 56px;
+				height: 67px;
+				background-image: url(".././../../public/img/studia/pin2.svg");
+				background-size: cover;
+				background-repeat: no-repeat;
+				position: absolute;
+				top: -5%;
+				left: 50%;
+			}
+		}
+		&--left1 {
+			transform: rotate(-1.349deg);
+		}
+		&--right9 {
+			transform: rotate(9.226deg);
+		}
+		&--first {
+			align-self: center;
+			z-index: 0;
+			@media screen and (max-width: 1400px) {
+				align-self: center;
+			}
+		}
+		&--second {
+			align-self: end;
+			z-index: 1;
+			@media screen and (max-width: 1400px) {
+				align-self: center;
+			}
+		}
+		&--third {
+			align-self: start;
+			z-index: 2;
+			@media screen and (max-width: 1400px) {
+				align-self: center;
+			}
+		}
+	}
+
+	&__photo-img {
+		flex-grow: 1;
+		object-fit: cover;
+	}
+
+	&__subtitle {
+		margin: 0 auto;
+		color: $color-white;
+		text-align: center;
+		font-family: $font-main;
+		font-size: clamp(15px, 3vw, 24px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%; /* 24.125px */
+		width: 100%;
+		max-width: 818px;
+		margin-bottom: 104px;
+	}
+}
