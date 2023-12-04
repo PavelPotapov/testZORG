@@ -1,0 +1,169 @@
+.portfolio {
+	padding-top: 179px;
+
+	&__title {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		position: sticky;
+		top: 179px;
+	}
+
+	&__header {
+		grid-column: 3 / 6;
+		max-width: 571px;
+		width: 100%;
+		height: 100%;
+		min-height: 60px;
+		border-radius: 40px;
+		background: #302f2f;
+	}
+
+	&__filter {
+		cursor: pointer;
+		width: 382px;
+		height: 60px;
+		border-radius: 38px;
+		background: #242424;
+		position: relative;
+		user-select: none;
+		transition: all 0.3s;
+		color: $color-white;
+		text-align: center;
+		font-family: $font-main;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__filter-list {
+		position: absolute;
+		overflow: hidden;
+		padding-top: 60px;
+		z-index: -1;
+		right: 0;
+		width: 382px;
+		height: 60px;
+		border-radius: 30px;
+		background: #343433;
+		box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+		transition: all 0.3s;
+	}
+
+	&__filter-list--active {
+		height: 419px;
+	}
+
+	&__filter-btn {
+		cursor: pointer;
+		max-width: 60px;
+		max-height: 60px;
+		width: 100%;
+		height: 100%;
+		background-image: url("../../../public/img/portfolio/filter.svg");
+		background-size: 34px 30px;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		background-color: $color-accent;
+		border-radius: 38px;
+		right: 0;
+	}
+
+	&__content {
+		padding-top: 66px;
+	}
+
+	&__content-top {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+	}
+
+	&__main-block {
+		max-width: 1026px;
+		//aspect-ratio: 1 / 0.746;
+		//min-height: 766px;
+		border-radius: 40px;
+		background-color: $color-gray;
+		padding: 59px 54px 66px 54px;
+	}
+
+	&__main-block-top {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+		margin-bottom: 38px;
+	}
+
+	&__main-block-info {
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+	}
+
+	&__main-block-game {
+		display: flex;
+		align-items: baseline;
+		gap: 38px;
+	}
+
+	&__main-block-title {
+		color: $color-white;
+		text-align: center;
+		font-family: $font-main;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
+	}
+
+	&__main-block-date {
+		color: #d3d3d3;
+		text-align: center;
+		font-family: $font-main;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%;
+	}
+
+	&__main-block-text {
+		color: $color-white;
+		font-family: $font-main;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%;
+	}
+
+	&__main-game-card {
+		max-width: 278px;
+		width: 100%;
+
+		border-radius: 25px;
+		border: 6px dashed #9c0;
+	}
+
+	&__main-game-container {
+		display: flex;
+		height: 470px;
+		gap: 42px;
+		flex-wrap: wrap;
+	}
+
+	&__main-game-card {
+		flex-basis: 100%;
+		height: 468px;
+		overflow: hidden;
+	}
+
+	&__main-game-card-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+}

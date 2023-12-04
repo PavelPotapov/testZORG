@@ -11,7 +11,8 @@ export default defineConfig({
 		assetsDir: "assets",
 		input: {
 			main: resolve(__dirname, "index.html"),
-			about: resolve(__dirname, "pages", "about", "index.html")
-		}
+			about: resolve(__dirname, "pages", "about", "index.html"),
+			career: resolve(__dirname, "pages", "career", "index.html"),
+		},
 	},
 })

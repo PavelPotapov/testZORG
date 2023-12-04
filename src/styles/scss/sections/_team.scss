@@ -11,7 +11,7 @@
 	&::before {
 		content: "";
 		width: 12vw;
-		height: 150%;
+		height: 140%;
 		position: absolute;
 		left: 0;
 		top: -8vw;
@@ -64,6 +64,10 @@
 			background-image: url("../../../public/img/map.svg");
 			background-repeat: no-repeat;
 			background-size: cover;
+			@media screen and (max-width: 500px) {
+				left: -60px;
+				top: -158%;
+			}
 		}
 		&::after {
 			content: "";
@@ -143,7 +147,7 @@
 			max-width: 430px;
 		}
 		@media screen and (max-width: 1400px) {
-			max-width: 515px;
+			max-width: 465px;
 		}
 		@media screen and (max-width: 630px) {
 			min-height: auto;
