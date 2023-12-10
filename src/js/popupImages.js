@@ -19,6 +19,8 @@
 
 //MutationObserver
 
+import { delay } from "./utils"
+
 class PopupHelper {
 	constructor(options) {
 		this.popup = document.querySelector(`[data-js="popup-block"]`)
@@ -89,17 +91,16 @@ class PopupHelper {
 	}
 
 	clearImages() {
-		if (!!this.images) {
-			this.images.forEach((image) => {
-				image.parentNode.removeChild(image)
-			})
-		}
+		this.container.innerHTML = ""
 	}
+
+	async createOverflowY() {}
 
 	togglePopup(item) {
 		console.log(this, item)
 		this.state.open = !this.state.open
 		if (this.state.open) {
+			document.documentElement.classList.toggle("disabled-scroll", true)
 			this.overlay.classList.toggle(this.classes.overlay)
 			this.popup.classList.toggle(this.classes.popup)
 			this.clearImages()
@@ -131,9 +132,12 @@ class PopupHelper {
 			this.title = detailData.title
 			this.text = detailData.text
 			this.date = detailData.date
+			delay(1000).then(() => (this.popup.style.overflowY = "auto"))
 		} else {
+			document.documentElement.classList.toggle("disabled-scroll", false)
 			this.popup.classList.toggle(this.classes.popup)
 			this.overlay.classList.toggle(this.classes.overlay)
+			this.popup.style.overflowY = "hidden"
 		}
 	}
 
@@ -145,19 +149,26 @@ class PopupHelper {
 		}
 	}
 
-	bindItemsClick() {
-		if (this.items) {
-			this.items.forEach((item) =>
-				item.addEventListener("click", () => {
-					this.togglePopup(item)
-				})
-			)
+	bindClickOverlay() {
+		if (this.overlay) {
+			this.overlay.addEventListener("click", (e) => {
+				this.cross.click()
+			})
 		}
+	}
+
+	bindItemsClick() {
+		this.items.forEach((item) =>
+			item.addEventListener("click", () => {
+				this.togglePopup(item)
+			})
+		)
 	}
 
 	acceptEvents() {
 		this.bindItemsClick()
 		this.bindCrossClick()
+		this.bindClickOverlay()
 	}
 }
 

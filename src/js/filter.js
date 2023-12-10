@@ -6,28 +6,26 @@ class FilterHelper {
 			active: false,
 		}
 		this.classes = {
-			active: ".portfolio__filter-list--active",
+			active: "portfolio__filter-list--active",
 		}
-		this.bind()
+		this.acceptEvents()
 	}
 	toggleFilter(event) {
 		if (this.state.active) {
-			this.target.classList.remove("portfolio__filter-list--active")
+			this.target.classList.remove(this.classes.active)
 		} else {
-			this.target.classList.add("portfolio__filter-list--active")
+			this.target.classList.add(this.classes.active)
 		}
-
 		this.state.active = !this.state.active
 	}
 
-	bind() {
+	acceptEvents() {
 		this.node.addEventListener("click", this.toggleFilter.bind(this))
 	}
 }
 
 const selector = "[data-js='filter']"
-const target = ".portfolio__filter-list"
-
 const selector2 = "[data-js='filter-btn']"
+const target = ".portfolio__filter-list"
 new FilterHelper(selector2, target)
 new FilterHelper(selector, target)

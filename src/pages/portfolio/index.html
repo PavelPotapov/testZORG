@@ -71,42 +71,113 @@
 						<div class="portfolio__filter" data-js="filter">Фильтры</div>
 						<div class="portfolio__filter-btn" data-js="filter-btn"></div>
 						<div class="portfolio__filter-list">
-							<legend>Complete the recipe</legend>
-							<div class="checkbox-group">
-								<input
-									type="checkbox"
-									data-role="parent"
-									name="EnchTbl"
-									id="EnchTbl"
-								/>
-								<label for="EnchTbl">Enchantment table</label>
-								<br />
-								<span>
-									<input
-										type="checkbox"
-										id="book"
-										name="ingredient"
-										value="book"
-									/>
-									<label for="book">Book</label>
-									<br />
-									<input
-										type="checkbox"
-										id="diamonds"
-										name="ingredient"
-										value="diamonds"
-									/>
-									<label for="diamonds">Diamonds (x2)</label>
-									<br />
-									<input
-										type="checkbox"
-										id="obsidian"
-										name="ingredient"
-										value="obsidian"
-									/>
-									<label for="obsidian">Obsidian (x4)</label>
-								</span>
-							</div>
+							<form action="" class="portfolio__filter-form" id="form-filter">
+								<fieldset class="portfolio__filter-fieldset">
+									<legend class="portfolio__filter-list-legend">Стили</legend>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="2d"
+										/>
+										<label
+											for="2d"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											2D <span>(25)</span></label
+										>
+									</div>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="3d"
+										/>
+										<label
+											for="3d"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											2D <span>(25)</span></label
+										>
+									</div>
+								</fieldset>
+								<fieldset class="portfolio__filter-fieldset">
+									<legend class="portfolio__filter-list-legend">Жанр</legend>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="genre-action2"
+										/>
+										<label
+											for="genre-action2"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											Action2 <span></span
+										></label>
+									</div>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="genre-action"
+										/>
+										<label
+											for="genre-action"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											Action <span></span
+										></label>
+									</div>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="genre-idle"
+										/>
+										<label
+											for="genre-idle"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											Idle <span></span
+										></label>
+									</div>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="genre-shooter"
+										/>
+										<label
+											for="genre-shooter"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											Shooter <span></span
+										></label>
+									</div>
+									<div class="portfolio__filter-input-block">
+										<input
+											type="checkbox"
+											class="custom-checkbox__field"
+											id="genre-platforme"
+										/>
+										<label
+											for="genre-platformer"
+											class="custom-checkbox__label portfolio__filter-checkbox"
+										>
+											Platformer <span></span
+										></label>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+						<div class="portfolio__filter-form-submit">
+							<input
+								type="submit"
+								value="Искать!"
+								class="portfolio__filter-submit"
+								form="form-filter"
+							/>
 						</div>
 					</div>
 					<div class="portfolio__content">
@@ -166,7 +237,13 @@
 							class="portfolio__item"
 							data-js="game-item"
 							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
+						>
+							<img
+								src="../../public/img/team.png"
+								alt=""
+								class="portfolio__item-img"
+							/>
+						</div>
 						<div
 							class="portfolio__item"
 							data-js="game-item"

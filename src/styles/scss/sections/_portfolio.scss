@@ -2,6 +2,11 @@
 	padding-top: 179px;
 	margin-bottom: 256px;
 
+	@media screen and (max-width: 1347px) {
+		margin-bottom: 100px;
+		padding-top: 100px;
+	}
+
 	&__overlay {
 		position: fixed;
 		top: 75px;
@@ -83,8 +88,67 @@
 		}
 	}
 
+	&__filter-form-submit {
+		position: absolute;
+		background-color: red;
+		bottom: -10px;
+		transform: translateY(100%);
+	}
+
+	&__filter-submit {
+	}
+
+	&__filter-checkbox {
+		color: $color-white;
+		font-family: $font-main;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100.523%; /* 20.105px */
+	}
+
 	&__filter-list--active {
-		height: 419px;
+		overflow-y: auto;
+		height: 415px;
+		/* Для WebKit браузеров (Chrome, Safari) */
+		&::-webkit-scrollbar-thumb:vertical {
+			background-color: $color-gray3;
+			outline: 1px solid $color-gray3;
+		}
+		&::-webkit-scrollbar:vertical {
+			background-color: transparent; //$color-gray
+			width: 10px;
+		}
+		/* Для Firefox браузера */
+		&::-moz-scrollbar-thumb:vertical {
+			background-color: $color-gray3;
+		}
+
+		&::-moz-scrollbar:vertical {
+			background-color: $color-gray;
+		}
+	}
+
+	&__filter-form {
+		padding-top: 15px;
+	}
+
+	&__filter-input-block {
+		margin: 0px 25px 18px 25px;
+	}
+
+	&__filter-list-legend {
+		width: 90%;
+		margin: 15px;
+		background-color: $color-gray3;
+		border-radius: 7px;
+		padding: 5px 11px;
+		color: $color-white;
+		font-family: $font-main;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100.523%;
 	}
 
 	&__filter-btn {
@@ -130,10 +194,10 @@
 
 	&__main-block {
 		box-sizing: border-box;
-		z-index: 3;
-		position: absolute;
+		z-index: 5;
+		position: fixed;
 		height: auto;
-		top: 70%;
+		top: 50dvh;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		overflow: hidden;
@@ -144,22 +208,35 @@
 		border-radius: 40px;
 		background-color: $color-gray;
 		padding: 0;
-
-		@media screen and (max-width: 1349px) {
+		/* Для WebKit браузеров (Chrome, Safari) */
+		&::-webkit-scrollbar-thumb:vertical {
+			background-color: $color-gray3;
 		}
-		@media screen and (max-width: 817px) {
+		&::-webkit-scrollbar:vertical {
+			background-color: $color-gray;
+			width: 30px;
+		}
+		/* Для Firefox браузера */
+		&::-moz-scrollbar-thumb:vertical {
+			background-color: $color-gray3;
 		}
 
-		@media screen and (max-width: 365px) {
+		&::-moz-scrollbar:vertical {
+			background-color: $color-gray;
 		}
 
-		@media screen and (max-width: 727px) {
+		@media screen and (max-width: 400px) {
+			top: 54dvh;
 		}
 
 		&--open {
-			max-height: 1000px;
+			max-height: 60dvh;
 			padding: 59px 54px 66px 54px;
 			transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+			@media screen and (max-width: 728px) {
+				max-height: 90dvh;
+				padding: 20px;
+			}
 		}
 	}
 
@@ -174,8 +251,10 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		@media screen and (max-width: 1083px) {
-			top: 0;
-			right: 0;
+			top: 15px;
+			right: 17px;
+			width: 40px;
+			aspect-ratio: 1 / 1;
 		}
 	}
 
@@ -249,21 +328,49 @@
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 		scroll-padding: 50%;
-	}
-	&__main-game-card {
-		max-width: 278px;
-		width: 100%;
-		scroll-snap-align: center;
-		border-radius: 25px;
-		border: 6px dashed #9c0;
+		padding-bottom: 10px;
+		/* Для WebKit браузеров (Chrome, Safari) */
+		&::-webkit-scrollbar-thumb:horizontal {
+			background-color: $color-gray3;
+		}
+		&::-webkit-scrollbar:horizontal {
+			background-color: $color-gray;
+			height: 30px;
+			outline: 1px solid $color-gray;
+		}
+		/* Для Firefox браузера */
+		&::-moz-scrollbar-thumb:horizontal {
+			background-color: $color-gray3;
+		}
+
+		&::-moz-scrollbar:horizontal {
+			background-color: $color-gray;
+		}
 	}
 
 	&__main-game-card {
-		width: 278px;
-		height: 468px;
+		max-width: 278px;
+		scroll-snap-align: center;
+		border-radius: 25px;
+		border: 6px dashed #9c0;
+		width: 28%;
+		height: 28dvh;
 		overflow: hidden;
 		scroll-snap-align: center;
 		flex-shrink: 0;
+
+		@media screen and (max-width: 900px) {
+			width: 36%;
+		}
+		@media screen and (max-width: 800px) {
+			width: 45%;
+		}
+		@media screen and (max-width: 500px) {
+			width: 60%;
+		}
+		@media screen and (max-width: 400px) {
+			width: 80%;
+		}
 	}
 
 	&__main-game-card-img {
@@ -279,5 +386,11 @@
 		width: 100%;
 		aspect-ratio: 1 / 1;
 		cursor: pointer;
+		overflow: hidden;
+		&-img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
