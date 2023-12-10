@@ -1,0 +1,10 @@
+._404 {
+	color: $color-white;
+	text-align: center;
+	font-family: $font-main;
+	font-size: clamp(3vw, 40vw + 1rem, 50vw);
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100.523%;
+	text-transform: uppercase;
+}

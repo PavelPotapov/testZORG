@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.28",
     "autoprefixer": "^10.4.16",
     "sass": "^1.69.4",
     "swiper": "^11.0.4"

@@ -164,7 +164,13 @@
 		// 		rgba(52, 52, 51, 0) 72.59%
 		// 	);
 		//background: url("../../../public/img/projects-background.png");
-		background: linear-gradient(286deg, #343433 35.54%, rgba(52, 52, 51, 0.38) 58.25%, rgba(52, 52, 51, 0) 137.59%), url(../../../public/img/projects-background.png);
+		background: linear-gradient(
+				286deg,
+				#343433 35.54%,
+				rgba(52, 52, 51, 0.38) 58.25%,
+				rgba(52, 52, 51, 0) 137.59%
+			),
+			url(../../../public/img/projects-background.png);
 		background-size: contain;
 		box-shadow: 0px 36.37459px 18.63089px -16.85652px rgba(0, 0, 0, 0.15);
 		background-repeat: no-repeat;
@@ -238,13 +244,14 @@
 	&__item {
 		cursor: pointer;
 		width: 97px;
-		height: 97px;
+		aspect-ratio: 1 / 1;
 		border: 5.323px dashed #9c0;
 		border-radius: 17.744px;
 		overflow: hidden;
 
 		& img {
-			aspect-ratio: 1 / 1;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 		}
 

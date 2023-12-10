@@ -24,7 +24,7 @@
 		display: inline-block;
 		text-align: center;
 		font-family: $font-main;
-		font-size: 40px;
+		font-size: clamp(2vw, 2vw + 1rem, 40px);
 		font-style: normal;
 		font-weight: 700;
 		line-height: 100.523%;
@@ -46,15 +46,14 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 
-			@media screen and (max-width: 706px) {
-				right: -20px;
-				top: -15%;
-				margin-bottom: 50px;
+			@media screen and (max-width: 666px) {
+				right: -90px;
+				top: -192%;
 			}
 
-			@media screen and (max-width: 666px) {
-				right: -70px;
-				top: -15%;
+			@media screen and (max-width: 421px) {
+				right: -55px;
+				top: -269%;
 			}
 		}
 		&::after {

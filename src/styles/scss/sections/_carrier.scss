@@ -115,13 +115,20 @@
 		flex-wrap: wrap;
 		gap: 35px;
 		justify-content: center;
-		margin-bottom: 174px;
+		margin-bottom: 35px;
 		@media screen and (max-width: 1000px) {
 			padding: 0px 30px;
-			margin-bottom: 109px;
+
+			&--mb174 {
+				margin-bottom: 109px;
+			}
 		}
 		@media screen and (max-width: 600px) {
 			padding: 0px 0px;
+		}
+
+		&--mb174 {
+			margin-bottom: 174px;
 		}
 	}
 

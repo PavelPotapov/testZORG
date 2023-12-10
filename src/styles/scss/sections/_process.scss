@@ -1,0 +1,186 @@
+.process {
+	margin-bottom: 80px;
+
+	&__title {
+		color: $color-white;
+		font-family: $font-main;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: 29px;
+	}
+
+	&__wrapper {
+		position: relative;
+		width: 100%;
+		min-height: 519px;
+		background-color: $color-gray;
+		border-radius: 35px;
+		box-shadow: 0px 36.375px 18.631px -16.857px rgba(0, 0, 0, 0.15);
+		padding: 52px 62px 52px 83px;
+		@media screen and (max-width: 1000px) {
+			padding: 30px 55px;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		@media screen and (max-width: 1000px) {
+			display: none;
+		}
+	}
+
+	&__step-wrapper {
+		@media screen and (max-width: 1000px) {
+			display: flex;
+			flex-direction: column;
+			gap: 45px;
+			border-left: 2px dashed #9c0;
+			padding-left: calc(2vw + 1rem);
+		}
+	}
+
+	&__step {
+		position: relative;
+		color: $color-white;
+		font-family: $font-main;
+		font-size: 21;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
+		max-width: 273px;
+		@media screen and (max-width: 1000px) {
+			font-size: clamp(2vw, 2vw + 1rem, 4vw);
+
+			&::before {
+				position: absolute;
+				content: "";
+				left: calc((-2vw - 1rem) * 1.5);
+				width: calc(2vw + 1rem);
+				height: calc(2vw + 1rem);
+				border-radius: 50%;
+				background-color: $color-accent;
+			}
+		}
+	}
+
+	&--text1 {
+		position: absolute;
+		top: 28%;
+		left: 10%;
+		@media screen and (max-width: 1330px) {
+			top: 15%;
+		}
+		@media screen and (max-width: 1000px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			max-width: 500px;
+		}
+	}
+
+	&--text2 {
+		position: absolute;
+		bottom: 18%;
+		left: 24%;
+		@media screen and (max-width: 1330px) {
+			bottom: 41%;
+		}
+		@media screen and (max-width: 1000px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			max-width: 500px;
+		}
+	}
+
+	&--text3 {
+		position: absolute;
+		top: 13%;
+		left: 45%;
+		max-width: 222px;
+		@media screen and (max-width: 1330px) {
+			top: 1%;
+		}
+		@media screen and (max-width: 1000px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			max-width: 500px;
+		}
+	}
+
+	&--text4 {
+		position: absolute;
+		top: 60%;
+		left: 52%;
+		max-width: 212px;
+		@media screen and (max-width: 1330px) {
+			top: 30%;
+		}
+		@media screen and (max-width: 1000px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			max-width: 500px;
+		}
+	}
+
+	&--text5 {
+		position: absolute;
+		top: 65%;
+		left: 74%;
+		max-width: 240px;
+		@media screen and (max-width: 1330px) {
+			top: 40%;
+		}
+		@media screen and (max-width: 1000px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			max-width: 500px;
+		}
+	}
+
+	&--text6 {
+		position: absolute;
+		top: 22%;
+		left: 88%;
+		max-width: 199px;
+		@media screen and (max-width: 1330px) {
+			top: 8%;
+			left: 84%;
+		}
+		@media screen and (max-width: 1000px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			max-width: 500px;
+		}
+	}
+}
+
+.seo-company {
+	text-align: right;
+}
+
+.seo-company-title {
+	color: $color-white;
+	font-family: $font-inter;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100.523%;
+}
+
+.seo-company-subtitle {
+	font-family: $font-inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100.523%;
+}

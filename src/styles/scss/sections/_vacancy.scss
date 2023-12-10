@@ -1,0 +1,139 @@
+.vacancy {
+	position: relative;
+	margin-bottom: 226px;
+	@media screen and (max-width: 1640px) {
+		margin-bottom: 109px;
+	}
+	@media screen and (max-width: 467px) {
+		margin-bottom: 89px;
+	}
+
+	&::before {
+		content: "";
+		width: 12vw;
+		height: 140%;
+		position: absolute;
+		left: 0;
+
+		background-image: url("../../../public/img/circle-left.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		z-index: -1;
+
+		@media screen and (max-width: 1620px) {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		max-width: 1026px;
+		color: $color-white;
+		text-align: center;
+		font-family: $font-main;
+		font-size: clamp(18px, 4vw, 28px);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin: 0 auto 48px auto;
+	}
+
+	&__subtitle {
+		color: $color-accent;
+		font-size: clamp(22px, 4vw, 32px);
+		margin-bottom: 72px;
+	}
+
+	&__get-contact {
+		position: relative;
+		max-width: 1387px;
+		border-radius: 18px;
+		background: $color-gray;
+		box-shadow: 0px 41px 21px -19px rgba(0, 0, 0, 0.15);
+		text-align: center;
+		margin: 0 auto;
+		padding: 33px 27px 36px 27px;
+		color: $color-white;
+		font-family: $font-main;
+		text-align: center;
+		font-size: clamp(14px, 4vw, 24px);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+
+		&--title {
+			margin: 0 auto;
+			font-size: clamp(18px, 4vw, 28px);
+			font-weight: 700;
+			margin-bottom: 12px;
+			max-width: 936px;
+
+			@media screen and (max-width: 1340px) {
+				max-width: 650px;
+			}
+		}
+
+		&--subtitle {
+			margin: 0 auto;
+			margin-bottom: 36px;
+			max-width: 936px;
+
+			@media screen and (max-width: 1340px) {
+				max-width: 650px;
+			}
+		}
+
+		&--btn {
+			cursor: pointer;
+			padding: 18px 66px;
+			border-radius: 18px;
+			background: $color-accent;
+			color: $color-black;
+			text-align: center;
+			font-family: $font-main;
+			font-size: clamp(11px, 4vw, 21px);
+			font-style: normal;
+			font-weight: 700;
+			line-height: 100.523%;
+
+			@media screen and (max-width: 717px) {
+				padding: 18px 15px;
+			}
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		right: -5%;
+
+		@media screen and (max-width: 1640px) {
+			width: 15%;
+			right: 0;
+		}
+		@media screen and (max-width: 1340px) {
+			width: 20%;
+			right: 0;
+			bottom: -20%;
+			top: auto;
+		}
+		@media screen and (max-width: 800px) {
+			width: 25%;
+			right: 0;
+			bottom: -30%;
+			top: auto;
+		}
+		@media screen and (max-width: 609px) {
+			width: 30%;
+			right: -5px;
+			bottom: -35%;
+			top: auto;
+			border-radius: 20px;
+		}
+		@media screen and (max-width: 467px) {
+			width: 30%;
+			right: -8px;
+			bottom: -25%;
+			top: auto;
+		}
+	}
+}
