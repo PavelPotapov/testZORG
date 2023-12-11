@@ -19,7 +19,7 @@
 
 //MutationObserver
 
-import { delay } from "./utils"
+import { delay, createElement } from "../utils"
 
 class PopupHelper {
 	constructor(options) {
@@ -36,9 +36,10 @@ class PopupHelper {
 			text: `[data-js="popup-text"]`,
 			date: `[data-js="popup-date"]`,
 			title: `[data-js="popup-title"]`,
-			item: `[data-js="game-item"]`,
 			detail: `data-js-portfolio-detail`,
 			overlay: `[data-id="popup-overlay"]`,
+			item: `[data-js="game-item"]`,
+			itemsContainer: `[data-js="portfolio-content"]`,
 		}
 		this.dataAttributes = {
 			images: {
@@ -54,6 +55,7 @@ class PopupHelper {
 			popup: "portfolio__main-block--open",
 			overlay: "active",
 		}
+
 		this.findElements()
 		this.acceptEvents()
 	}
@@ -67,37 +69,15 @@ class PopupHelper {
 		this.date = this.popup.querySelector(this.selectors.date)
 		this.title = this.popup.querySelector(this.selectors.title)
 		this.items = document.querySelectorAll(this.selectors.item)
+		this.itemsContainer = document.querySelector(this.selectors.itemsContainer)
 		this.overlay = document.querySelector(this.selectors.overlay)
-	}
-
-	createElement(
-		elementType,
-		attributes,
-		parentNode = undefined,
-		parentElementSelector
-	) {
-		const newElement = document.createElement(elementType)
-		const parentElement =
-			parentNode ?? document.querySelector(parentElementSelector)
-		if (attributes) {
-			for (let key in attributes) {
-				newElement.setAttribute(key, attributes[key])
-			}
-		}
-		if (parentNode) {
-			parentElement.appendChild(newElement)
-		}
-		return newElement
 	}
 
 	clearImages() {
 		this.container.innerHTML = ""
 	}
 
-	async createOverflowY() {}
-
 	togglePopup(item) {
-		console.log(this, item)
 		this.state.open = !this.state.open
 		if (this.state.open) {
 			document.documentElement.classList.toggle("disabled-scroll", true)
@@ -108,7 +88,7 @@ class PopupHelper {
 			this.logo.src = detailData.logo
 			detailData.images.forEach((image) => {
 				/*создаем div */
-				const rootDIV = this.createElement(
+				const rootDIV = createElement(
 					"div",
 					{
 						class: this.classes.images.block,
@@ -120,7 +100,7 @@ class PopupHelper {
 				)
 
 				/* внутри div создаем картинку */
-				this.createElement(
+				createElement(
 					"img",
 					{
 						src: image,
@@ -140,6 +120,11 @@ class PopupHelper {
 			this.popup.style.overflowY = "hidden"
 		}
 	}
+
+	// findGameItems() {
+	// 	this.items = document.querySelectorAll(this.selectors.item)
+	// 	this.bindItemsClick()
+	// }
 
 	bindCrossClick() {
 		if (this.cross) {
@@ -172,4 +157,4 @@ class PopupHelper {
 	}
 }
 
-new PopupHelper()
+export const popupHelper = new PopupHelper()

@@ -6,181 +6,210 @@
 		<title>Vite App</title>
 	</head>
 	<body>
-		<div class="header-wrapper">
-			<h1 class="sr-only">ZORG GAMES</h1>
-			<header class="header">
-				<div class="logo">
-					<a href="#">
-						<img
-							class="logo__image"
-							src="../../public/img/logo.svg"
-							alt="Logo"
-							width="104"
-							height="24"
-						/>
-					</a>
-				</div>
-				<nav class="nav">
-					<ul class="nav__list">
-						<li class="nav__item">
-							<a href="#">Студия</a>
-						</li>
-						<li class="nav__item"><a href="#">Портфолио</a></li>
-						<li class="nav__item"><a href="#">Работа</a></li>
-						<li class="nav__item"><a href="#">Услуги</a></li>
-						<li class="nav__item"><a href="#">Контакты</a></li>
+		<div class="flowContainer">
+			<div class="header-wrapper">
+				<h1 class="sr-only">ZORG GAMES</h1>
+				<header class="header">
+					<div class="logo">
+						<a href="#">
+							<img
+								class="logo__image"
+								src="../../public/img/logo.svg"
+								alt="Logo"
+								width="104"
+								height="24"
+							/>
+						</a>
+					</div>
+					<nav class="nav">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="#">Студия</a>
+							</li>
+							<li class="nav__item"><a href="#">Портфолио</a></li>
+							<li class="nav__item"><a href="#">Работа</a></li>
+							<li class="nav__item"><a href="#">Услуги</a></li>
+							<li class="nav__item"><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+					<div class="change-language" data-id="change-language">
+						<select id="courses" style="color: white">
+							<option value="EN">EN</option>
+							<option value="EN2">EN2</option>
+							<option value="EN3">EN3</option>
+							<option value="EN4">EN4</option>
+							<option value="EN5">EN5</option>
+						</select>
+					</div>
+					<div class="burger" data-id="burger"></div>
+				</header>
+			</div>
+			<div class="laptop-menu" data-id="laptop-menu">
+				<nav class="laptop-menu__nav">
+					<ul class="laptop-menu__list">
+						<li class="laptop-menu__item"><a href="#">Студия</a></li>
+						<li class="laptop-menu__item"><a href="#">Портфолио</a></li>
+						<li class="laptop-menu__item"><a href="#">Работа</a></li>
+						<li class="laptop-menu__item"><a href="#">Услуги</a></li>
+						<li class="laptop-menu__item"><a href="#">Контакты</a></li>
 					</ul>
 				</nav>
-				<div class="change-language" data-id="change-language">
-					<select id="courses" style="color: white">
-						<option value="EN">EN</option>
-						<option value="EN2">EN2</option>
-						<option value="EN3">EN3</option>
-						<option value="EN4">EN4</option>
-						<option value="EN5">EN5</option>
-					</select>
+				<div class="social">
+					<a class="block" href="tel:79028607651">+7 (902) 860-76-51</a>
+					<a class="block" href="mailto:m.zhvikovm@gmail.com"
+						>m.zhvikovm@gmail.com</a
+					>
 				</div>
-				<div class="burger" data-id="burger"></div>
-			</header>
-		</div>
-
-		<div class="laptop-menu" data-id="laptop-menu">
-			<nav class="laptop-menu__nav">
-				<ul class="laptop-menu__list">
-					<li class="laptop-menu__item"><a href="#">Студия</a></li>
-					<li class="laptop-menu__item"><a href="#">Портфолио</a></li>
-					<li class="laptop-menu__item"><a href="#">Работа</a></li>
-					<li class="laptop-menu__item"><a href="#">Услуги</a></li>
-					<li class="laptop-menu__item"><a href="#">Контакты</a></li>
-				</ul>
-			</nav>
-
-			<div class="social">
-				<a class="block" href="tel:79028607651">+7 (902) 860-76-51</a>
-				<a class="block" href="mailto:m.zhvikovm@gmail.com"
-					>m.zhvikovm@gmail.com</a
-				>
 			</div>
-		</div>
-
-		<main>
-			<section class="portfolio">
-				<div class="container">
-					<div class="portfolio__title">
-						<div class="portfolio__header"></div>
-						<div class="portfolio__filter" data-js="filter">Фильтры</div>
-						<div class="portfolio__filter-btn" data-js="filter-btn"></div>
-						<div class="portfolio__filter-list">
-							<form action="" class="portfolio__filter-form" id="form-filter">
-								<fieldset class="portfolio__filter-fieldset">
-									<legend class="portfolio__filter-list-legend">Стили</legend>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="2d"
-										/>
-										<label
-											for="2d"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											2D <span>(25)</span></label
-										>
-									</div>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="3d"
-										/>
-										<label
-											for="3d"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											2D <span>(25)</span></label
-										>
-									</div>
-								</fieldset>
-								<fieldset class="portfolio__filter-fieldset">
-									<legend class="portfolio__filter-list-legend">Жанр</legend>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="genre-action2"
-										/>
-										<label
-											for="genre-action2"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											Action2 <span></span
-										></label>
-									</div>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="genre-action"
-										/>
-										<label
-											for="genre-action"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											Action <span></span
-										></label>
-									</div>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="genre-idle"
-										/>
-										<label
-											for="genre-idle"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											Idle <span></span
-										></label>
-									</div>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="genre-shooter"
-										/>
-										<label
-											for="genre-shooter"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											Shooter <span></span
-										></label>
-									</div>
-									<div class="portfolio__filter-input-block">
-										<input
-											type="checkbox"
-											class="custom-checkbox__field"
-											id="genre-platforme"
-										/>
-										<label
-											for="genre-platformer"
-											class="custom-checkbox__label portfolio__filter-checkbox"
-										>
-											Platformer <span></span
-										></label>
-									</div>
-								</fieldset>
-							</form>
+			<main>
+				<section class="portfolio">
+					<div class="container">
+						<div class="portfolio__title">
+							<div class="portfolio__header"></div>
+							<div class="portfolio__filter" data-js="filter">Фильтры</div>
+							<div class="portfolio__filter-container">
+								<div class="portfolio__filter-list" data-js="filter-list">
+									<form
+										class="portfolio__filter-form"
+										id="form-filter"
+										data-js="form-filter"
+										enctype="multipart/form-data"
+										data-js-details='{"url": "http://127.0.0.1:5000/filtered"}'
+									>
+										<fieldset class="portfolio__filter-fieldset">
+											<legend class="portfolio__filter-list-legend">
+												Стили
+											</legend>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="2d"
+													name="2d"
+													data-js="filter-check"
+												/>
+												<label
+													for="2d"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													2D <span>(25)</span></label
+												>
+											</div>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="3d"
+													name="3d"
+													data-js="filter-check"
+												/>
+												<label
+													for="3d"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													2D <span>(25)</span></label
+												>
+											</div>
+										</fieldset>
+										<fieldset class="portfolio__filter-fieldset">
+											<legend class="portfolio__filter-list-legend">
+												Жанр
+											</legend>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="genre-action2"
+													name="genre-action2"
+													data-js="filter-check"
+												/>
+												<label
+													for="genre-action2"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													Action2 <span></span
+												></label>
+											</div>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="genre-action"
+													name="genre-action"
+													data-js="filter-check"
+												/>
+												<label
+													for="genre-action"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													Action <span></span
+												></label>
+											</div>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="genre-idle"
+													name="genre-idle"
+													data-js="filter-check"
+												/>
+												<label
+													for="genre-idle"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													Idle <span></span
+												></label>
+											</div>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="genre-shooter"
+													name="genre-shooter"
+													data-js="filter-check"
+												/>
+												<label
+													for="genre-shooter"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													Shooter <span></span
+												></label>
+											</div>
+											<div class="portfolio__filter-input-block">
+												<input
+													type="checkbox"
+													class="custom-checkbox__field"
+													id="genre-platformer"
+													name="genre-platformer"
+													data-js="filter-check"
+												/>
+												<label
+													for="genre-platformer"
+													class="custom-checkbox__label portfolio__filter-checkbox"
+												>
+													Platformer <span></span
+												></label>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+								<div class="portfolio__filter-form-submit">
+									<input
+										type="submit"
+										value="Искать!"
+										class="portfolio__filter-submit"
+										form="form-filter"
+										data-js="filter-submit"
+									/>
+									<button
+										class="portfolio__filter-clear"
+										data-js="filter-clear"
+									>
+										Сбросить
+									</button>
+								</div>
+							</div>
 						</div>
-						<div class="portfolio__filter-form-submit">
-							<input
-								type="submit"
-								value="Искать!"
-								class="portfolio__filter-submit"
-								form="form-filter"
-							/>
-						</div>
-					</div>
-					<div class="portfolio__content">
 						<div class="portfolio__main-block" data-js="popup-block">
 							<div
 								class="portfolio__main-block-cross"
@@ -232,183 +261,184 @@
 								</div>
 							</div>
 						</div>
-
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						>
-							<img
-								src="../../public/img/team.png"
-								alt=""
-								class="portfolio__item-img"
-							/>
+						<div class="portfolio__content" data-js="portfolio-content">
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							>
+								<img
+									src="../../public/img/team.png"
+									alt=""
+									class="portfolio__item-img"
+								/>
+							</div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
 						</div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
-						<div
-							class="portfolio__item"
-							data-js="game-item"
-							data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-						></div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<div class="footer__top">
+					<div class="footer__logo">
+						<img
+							src="../../public/img/zorg-games-logo.svg"
+							alt="Zorg-games"
+							width="284"
+							height="240"
+							loading="lazy"
+						/>
+					</div>
+					<div class="footer__policy">
+						<div class="footer__policy-content">
+							<span class="footer__years">© 2020 - 2023 ZORG GAMES</span>
+							<div>Политика конфиденциальности Условия оказания услуг</div>
+						</div>
+					</div>
+					<div class="footer__contacts">
+						<div class="footer__contacts-inner">
+							<a href="tel:+79028607651">+7 (902) 860-76-51</a>
+							<a href="mailto:m.zhvikovm@gmail.com">m.zhvikovm@gmail.com</a>
+						</div>
 					</div>
 				</div>
-			</section>
-		</main>
-
-		<footer class="footer">
-			<div class="footer__top">
-				<div class="footer__logo">
-					<img
-						src="../../public/img/zorg-games-logo.svg"
-						alt="Zorg-games"
-						width="284"
-						height="240"
-						loading="lazy"
-					/>
+				<div class="footer__bottom">
+					Просматривая этот сайт, Вы соглашаетесь с нашей политикой
+					конфиденциальности.
+					<a href="#" tabindex="_blank">Принять Политика конфиденциальности</a>
 				</div>
-				<div class="footer__policy">
-					<div class="footer__policy-content">
-						<span class="footer__years">© 2020 - 2023 ZORG GAMES</span>
-						<div>Политика конфиденциальности Условия оказания услуг</div>
-					</div>
-				</div>
-				<div class="footer__contacts">
-					<div class="footer__contacts-inner">
-						<a href="tel:+79028607651">+7 (902) 860-76-51</a>
-						<a href="mailto:m.zhvikovm@gmail.com">m.zhvikovm@gmail.com</a>
-					</div>
-				</div>
-			</div>
-			<div class="footer__bottom">
-				Просматривая этот сайт, Вы соглашаетесь с нашей политикой
-				конфиденциальности.
-				<a href="#" tabindex="_blank">Принять Политика конфиденциальности</a>
-			</div>
-		</footer>
-
+			</footer>
+		</div>
+		<!-- Overlay & loaders -->
 		<div class="laptop-menu__overlay" data-id="overlay"></div>
 		<div class="portfolio__overlay" data-id="popup-overlay"></div>
+		<div class="clock-loader" data-js="clock-loader"></div>
 		<script type="module" src="../../js/main.js"></script>
-		<script type="module" src="../../js/filter.js"></script>
-		<script type="module" src="./game-item.js"></script>
+		<script type="module" src="../../js/portfolio/popupImages.js"></script>
+		<script type="module" src="../../js/portfolio/filter.js"></script>
 	</body>
 </html>

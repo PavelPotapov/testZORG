@@ -22,6 +22,17 @@
 	overflow-y: hidden;
 }
 
+.flowContainer {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-rows: auto 1fr;
+	margin: auto;
+	max-width: 100%;
+	min-height: inherit;
+	position: relative;
+	width: 100%;
+}
+
 /* screen reader only */
 .sr-only {
 	position: absolute;
@@ -84,6 +95,18 @@ body {
 .accent-text {
 	color: $color-accent;
 }
+
+// .scrollGradient {
+// 	background-image: linear-gradient(to right, white, white),
+// 		linear-gradient(to right, white, white),
+// 		linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0)),
+// 		linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0));
+// 	background-position: left center, right center, left center, right center;
+// 	background-repeat: no-repeat;
+// 	background-color: #343433;
+// 	background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+// 	background-attachment: local, local, scroll, scroll;
+// }
 
 @include laptop {
 	.container {

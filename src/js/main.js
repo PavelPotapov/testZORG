@@ -2,7 +2,6 @@ import "./swiper"
 import "../styles/scss/main.scss"
 import initBurger from "./burger"
 import { AriaHidden } from "./areaHidden"
-import "./popupImages"
 
 initBurger()
 
