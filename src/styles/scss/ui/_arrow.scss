@@ -14,6 +14,10 @@
 	}
 
 	&-btn {
+		color: #3c6100 !important;
+		align-items: center;
+		justify-content: center;
+		display: flex;
 		cursor: pointer;
 		grid-column: 6 / 8;
 		@media screen and (max-width: 1671px) {

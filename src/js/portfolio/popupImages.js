@@ -1,25 +1,9 @@
-//Закрытие окна на страницу портфолио
-
-// const btn = document.querySelector()
-// btn.addEventListener("click", function (e) {
-// 	this.parentNode.classList.toggle("portfolio__main-block--close")
-// })
-
-// [data-js]="popup-image"
-// [data-js]="popup-text"
-// [data-js]="popup-date"
-// [data-js]="popup-title"
-// [data-js]="popup-logo"
-// class="portfolio__main-game-card"
-// class="portfolio__main-game-card-img"
-// document
-// 	.querySelectorAll(`[data-js="game-item"]`)
-// 	.forEach((el) => el.addEventListener("click", () => {}))
-//{ &quot;url&quot;: &quot;/local/templates/delement/ajax/main_subscribe_email.php&quot;, &quot;method&quot;: &quot;POST&quot;, &quot;isResetAfterSuccess&quot;: true, &quot;isShowLoader&quot;: true }
-
-//MutationObserver
-
-import { delay, createElement } from "../utils"
+import {
+	delay,
+	createElement,
+	disableScroll,
+	clearChildElements,
+} from "../utils"
 
 class PopupHelper {
 	constructor(options) {
@@ -74,16 +58,27 @@ class PopupHelper {
 	}
 
 	clearImages() {
-		this.container.innerHTML = ""
+		return new Promise((resolve, reject) => {
+			try {
+				clearChildElements(this.container)
+				this.logo.src = ""
+				this.title = ""
+				this.text = ""
+				this.date = ""
+				resolve()
+			} catch {
+				reject()
+			}
+		})
 	}
 
-	togglePopup(item) {
+	async togglePopup(item) {
 		this.state.open = !this.state.open
 		if (this.state.open) {
-			document.documentElement.classList.toggle("disabled-scroll", true)
+			disableScroll()
 			this.overlay.classList.toggle(this.classes.overlay)
 			this.popup.classList.toggle(this.classes.popup)
-			this.clearImages()
+			await this.clearImages()
 			const detailData = JSON.parse(item.getAttribute(this.selectors.detail))
 			this.logo.src = detailData.logo
 			detailData.images.forEach((image) => {
@@ -121,10 +116,10 @@ class PopupHelper {
 		}
 	}
 
-	// findGameItems() {
-	// 	this.items = document.querySelectorAll(this.selectors.item)
-	// 	this.bindItemsClick()
-	// }
+	findGameItems() {
+		this.items = document.querySelectorAll(this.selectors.item)
+		this.bindItemsClick()
+	}
 
 	bindCrossClick() {
 		if (this.cross) {
@@ -142,11 +137,13 @@ class PopupHelper {
 		}
 	}
 
+	itemClick(item) {
+		this.togglePopup(item)
+	}
+
 	bindItemsClick() {
 		this.items.forEach((item) =>
-			item.addEventListener("click", () => {
-				this.togglePopup(item)
-			})
+			item.addEventListener("click", this.itemClick.bind(this, item))
 		)
 	}
 

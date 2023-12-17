@@ -1,5 +1,5 @@
 .clock-loader {
-	--clock-color: red;
+	--clock-color: #9c0;
 	--clock-width: 4rem;
 	--clock-radius: calc(var(--clock-width) / 2);
 	--clock-minute-length: calc(var(--clock-width) * 0.4);
@@ -7,8 +7,9 @@
 	--clock-thickness: 0.2rem;
 
 	position: fixed;
+	z-index: 2;
 	display: none;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	transform: translateX(-50%);
 	justify-content: center;

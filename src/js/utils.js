@@ -23,3 +23,17 @@ export function createElement(
 	}
 	return newElement
 }
+
+export function disableScroll() {
+	document.documentElement.classList.toggle("disabled-scroll", true)
+}
+
+export function clearChildElements(node) {
+	try {
+		while (node.firstChild) {
+			node.removeChild(node.firstChild)
+		}
+	} catch (err) {
+		throw new Error(err)
+	}
+}

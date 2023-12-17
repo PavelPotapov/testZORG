@@ -3,66 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Vite App</title>
+		<title>{{title}}</title>
 	</head>
 	<body>
-		<div class="header-wrapper">
-			<h1 class="sr-only">ZORG GAMES</h1>
-			<header class="header">
-				<div class="logo">
-					<a href="#">
-						<img
-							class="logo__image"
-							src="../public/img/logo.svg"
-							alt="Logo"
-							width="104"
-							height="24"
-						/>
-					</a>
-				</div>
-				<nav class="nav">
-					<ul class="nav__list">
-						<li class="nav__item">
-							<a href="#">Студия</a>
-						</li>
-						<li class="nav__item"><a href="#">Портфолио</a></li>
-						<li class="nav__item"><a href="#">Работа</a></li>
-						<li class="nav__item"><a href="#">Услуги</a></li>
-						<li class="nav__item"><a href="#">Контакты</a></li>
-					</ul>
-				</nav>
-				<div class="change-language" data-id="change-language">
-					<select id="courses" style="color: white">
-						<option value="EN">EN</option>
-						<option value="EN2">EN2</option>
-						<option value="EN3">EN3</option>
-						<option value="EN4">EN4</option>
-						<option value="EN5">EN5</option>
-					</select>
-				</div>
-				<div class="burger" data-id="burger"></div>
-			</header>
-		</div>
-
-		<div class="laptop-menu" data-id="laptop-menu">
-			<nav class="laptop-menu__nav">
-				<ul class="laptop-menu__list">
-					<li class="laptop-menu__item"><a href="#">Студия</a></li>
-					<li class="laptop-menu__item"><a href="#">Портфолио</a></li>
-					<li class="laptop-menu__item"><a href="#">Работа</a></li>
-					<li class="laptop-menu__item"><a href="#">Услуги</a></li>
-					<li class="laptop-menu__item"><a href="#">Контакты</a></li>
-				</ul>
-			</nav>
-
-			<div class="social">
-				<a class="block" href="tel:79028607651">+7 (902) 860-76-51</a>
-				<a class="block" href="mailto:m.zhvikovm@gmail.com"
-					>m.zhvikovm@gmail.com</a
-				>
-			</div>
-		</div>
-
+		{{>header}}
 		<main>
 			<section class="gallery">
 				<div class="container">
@@ -130,7 +74,7 @@
 					</div>
 					<div class="arrow">
 						<div class="arrow-info">Узнать больше</div>
-						<button class="arrow-btn block btn">студия</button>
+						<a href="#" class="arrow-btn block btn">студия</a>
 					</div>
 				</div>
 			</section>
@@ -167,7 +111,6 @@
 										height="58"
 										width="197"
 										class="block projects__stores-image"
-										class="block"
 										loading="lazy"
 										src="./public/img/google-play.png"
 										alt="Google Play Logo"
@@ -237,7 +180,7 @@
 							</p>
 							<div class="arrow">
 								<div class="arrow-info">Детальнее&nbsp;&nbsp;&nbsp;&nbsp;</div>
-								<button class="arrow-btn block btn">УСЛУГИ</button>
+								<a href="" class="arrow-btn block btn">УСЛУГИ</a>
 							</div>
 						</div>
 					</div>
@@ -460,27 +403,36 @@
 								type="text"
 								class="carrier__application-input block"
 								placeholder="Имя"
+								name="name"
+								required
 							/>
 							<input
 								type="email"
 								class="carrier__application-input block"
 								placeholder="Почта"
+								name="email"
+								required
 							/>
 							<input
 								type="text"
 								class="carrier__application-input block"
 								placeholder="Тема"
+								name="theme"
+								required
 							/>
 							<textarea
 								class="carrier__application-input carrier__application-text-area block"
-								name=""
-								id=""
+								name="message"
+								id="message-carrier"
 								placeholder="Ваше сообщение"
+								required
 							></textarea>
 							<input
 								type="checkbox"
 								class="custom-checkbox__field"
 								id="personal-data-checkbox"
+								name="personal-data"
+								required
 							/>
 							<label
 								for="personal-data-checkbox"
@@ -504,36 +456,7 @@
 			</section>
 		</main>
 
-		<footer class="footer">
-			<div class="footer__top">
-				<div class="footer__logo">
-					<img
-						src="./public/img/zorg-games-logo.svg"
-						alt="Zorg-games"
-						width="284"
-						height="240"
-						loading="lazy"
-					/>
-				</div>
-				<div class="footer__policy">
-					<div class="footer__policy-content">
-						<span class="footer__years">© 2020 - 2023 ZORG GAMES</span>
-						<div>Политика конфиденциальности Условия оказания услуг</div>
-					</div>
-				</div>
-				<div class="footer__contacts">
-					<div class="footer__contacts-inner">
-						<a href="tel:+79028607651">+7 (902) 860-76-51</a>
-						<a href="mailto:m.zhvikovm@gmail.com">m.zhvikovm@gmail.com</a>
-					</div>
-				</div>
-			</div>
-			<div class="footer__bottom">
-				Просматривая этот сайт, Вы соглашаетесь с нашей политикой
-				конфиденциальности.
-				<a href="#" tabindex="_blank">Принять Политика конфиденциальности</a>
-			</div>
-		</footer>
+		{{>footer}}
 
 		<div class="laptop-menu__overlay" data-id="overlay"></div>
 		<script type="module" src="./js/main.js"></script>

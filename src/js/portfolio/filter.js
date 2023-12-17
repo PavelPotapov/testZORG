@@ -1,4 +1,4 @@
-import { delay } from "../utils"
+import { createElement, delay } from "../utils"
 import { popupHelper } from "./popupImages"
 import { GameItemsHelper } from "./gameItems"
 
@@ -13,6 +13,7 @@ class FilterHelper {
 			filterList: "[data-js='filter-list']",
 			form: "[data-js='form-filter']",
 			checkboxes: "[data-js='filter-check']",
+			overlay: "[data-id='popup-overlay']",
 		}
 		this.state = {
 			filterActive: false,
@@ -25,8 +26,10 @@ class FilterHelper {
 			activeSubmit: "portfolio__filter-submit--active",
 			activeClearBtn: "portfolio__filter-clear--active",
 			hiddenClearBtn: "portfolio__filter-clear--hidden",
+			overlay: "active",
 		}
 
+		this.isSearching = false // был ли когда-то поиск, если да - то при клике на сброс фильтра будет вызывать submit для получения информации, если нет - то фильтр просто сбрасывает checkboxes
 		this.currentChecked = 0 //кол-во выбранных checkbox элементов
 		this.findElements()
 		this.acceptEvents()
@@ -39,13 +42,13 @@ class FilterHelper {
 		this.submitBtn = document.querySelector(this.selectors.submitBtn)
 		this.form = document.querySelector(this.selectors.form)
 		this.checkboxes = document.querySelectorAll(this.selectors.checkboxes)
+		this.overlay = document.querySelector(this.selectors.overlay)
 	}
 
 	async createFilterRequest(url, formData) {
 		try {
 			gameItemsHelper.clearContents()
-			gameItemsHelper.showLoader()
-
+			this.showLoader()
 			const response = await fetch(url, { method: "POST", body: formData })
 
 			if (!response.ok) {
@@ -55,24 +58,62 @@ class FilterHelper {
 			const gameItems = await response.json()
 			return gameItems
 		} catch (error) {
-			console.log(error)
+			this.hideLoader()
+			return error
 		}
+	}
+
+	hideLoader() {
+		document.documentElement.classList.remove("disabled-scroll")
+		gameItemsHelper.hideLoader()
+		this.overlay.classList.remove(this.classes.overlay)
+	}
+
+	showLoader() {
+		document.documentElement.classList.add("disabled-scroll")
+		gameItemsHelper.showLoader()
+		this.overlay.classList.add(this.classes.overlay)
+	}
+
+	submitHandler(e) {
+		function noneData() {
+			const info = createElement("p", {
+				style: "color: #fff; font-size: 20px; font-family: Montserrat",
+				"data-js": "game-item",
+			})
+			info.textContent = "По данному запросу ничего не найдено 🙃"
+			gameItemsHelper.portfolioContent.appendChild(info)
+		}
+
+		this.isSearching = true
+		e.preventDefault()
+		if (this.isMobileSize) {
+			//скрываем фильтр на мобильном разрешении
+			this.toggleFilter()
+		}
+		const formData = new FormData(this.form)
+		const data = JSON.parse(this.form.dataset.jsDetails)
+		this.createFilterRequest(data.url, formData)
+			.then(async (response) => {
+				if (response) {
+					await gameItemsHelper.clearContents()
+					gameItemsHelper.createItems(response)
+					popupHelper.findGameItems() //там же навешивается слушатель событий
+					delay(500).then(() => {
+						this.hideLoader()
+					})
+				} else {
+					noneData()
+				}
+			})
+			.catch((error) => {
+				noneData()
+			})
 	}
 
 	bindFormSubmit() {
 		this.form.addEventListener("submit", (e) => {
-			e.preventDefault()
-			const formData = new FormData(this.form)
-			for (let pair of formData.entries()) {
-			}
-			const data = JSON.parse(this.form.dataset.jsDetails)
-			this.createFilterRequest(data.url, formData)
-				.then((response) => {
-					gameItemsHelper.createItems(response)
-					//popupHelper.findGameItems()
-					//console.log(popupHelper.items)
-				})
-				.catch((error) => {})
+			this.submitHandler(e)
 		})
 	}
 
@@ -102,6 +143,10 @@ class FilterHelper {
 			this.currentChecked = 0
 			this.state.clearBtnShown = false
 			this.clearBtn.classList.remove(this.classes.activeClearBtn)
+			if (this.isSearching) {
+				this.submitBtn.click()
+				this.isSearching = false
+			}
 		})
 	}
 
@@ -129,7 +174,32 @@ class FilterHelper {
 		}
 	}
 
+	hideFilter(mathes) {
+		if (mathes) {
+			this.state.filterActive = false
+			if (this.state.clearBtnShown) {
+				this.clearBtn.classList.add(this.classes.hiddenClearBtn)
+			}
+			this.filterList.classList.remove(this.classes.activeFilter)
+			this.submitBtn.classList.remove(this.classes.activeSubmit)
+		}
+	}
+
+	bindMediaQuery() {
+		this.isMobileSize = false
+		const mobileWidthMediaQuery = window.matchMedia("(max-width: 1056px)")
+		this.isMobileSizeChecker(mobileWidthMediaQuery.matches)
+		mobileWidthMediaQuery.addEventListener("change", (event) => {
+			this.isMobileSizeChecker(event.matches)
+		})
+	}
+
+	isMobileSizeChecker(matches) {
+		this.isMobileSize = matches ? true : false
+	}
+
 	acceptEvents() {
+		this.bindMediaQuery()
 		this.bindFilterClick()
 		this.bindCheckboxesClick()
 		this.bindClearBtnClick()

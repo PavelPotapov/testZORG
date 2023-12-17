@@ -1,4 +1,4 @@
-import { createElement } from "../utils"
+import { clearChildElements, createElement } from "../utils"
 
 export class GameItemsHelper {
 	constructor() {
@@ -35,7 +35,14 @@ export class GameItemsHelper {
 	}
 
 	clearContents() {
-		this.portfolioContent.innerHTML = ""
+		return new Promise((resolve, reject) => {
+			try {
+				clearChildElements(this.portfolioContent)
+				resolve()
+			} catch {
+				reject()
+			}
+		})
 	}
 
 	showLoader() {
@@ -48,25 +55,6 @@ export class GameItemsHelper {
 
 	createItems(itemsInfo) {
 		itemsInfo.forEach((item) => {
-			/*elementType,
-                attributes,
-                parentNode = undefined,
-                parentElementSelector*/
-
-			/*
-                <div
-								class="portfolio__item"
-								data-js="game-item"
-								data-js-portfolio-detail='{"images":["../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png","../../public/img/team.png"],"logo":"../../public/img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-							>
-								<img
-									src="../../public/img/team.png"
-									alt=""
-									class="portfolio__item-img"
-								/>
-                                JSON.parse(item)
-							</div>*/
-
 			const divRoot = createElement(
 				"div",
 				{
