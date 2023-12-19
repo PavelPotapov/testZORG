@@ -1,22 +1,25 @@
 {
-  "name": "ndefined",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^4.4.5"
-  },
-  "dependencies": {
-    "@fancyapps/ui": "^5.0.28",
-    "autoprefixer": "^10.4.16",
-    "sass": "^1.69.4",
-    "swiper": "^11.0.4",
-    "toastify-js": "^1.12.0",
-    "vite-plugin-handlebars": "^1.6.0"
-  }
+	"name": "ndefined",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"jsdoc": "^4.0.2",
+		"minami": "^1.2.3",
+		"vite": "^4.4.5"
+	},
+	"dependencies": {
+		"@fancyapps/ui": "^5.0.28",
+		"autoprefixer": "^10.4.16",
+		"sass": "^1.69.4",
+		"swiper": "^11.0.4",
+		"taffydb": "^2.7.3",
+		"toastify-js": "^1.12.0",
+		"vite-plugin-handlebars": "^1.6.0"
+	}
 }
