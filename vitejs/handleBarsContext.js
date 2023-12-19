@@ -29,4 +29,9 @@ export const pageData = {
 		footerImage: "../img/zorg-games-logo.svg",
 		headerImage: "../img/logo.svg",
 	},
+	"/pages/modal.html": {
+		title: "Sub Page",
+		footerImage: "../img/zorg-games-logo.svg",
+		headerImage: "../img/logo.svg",
+	},
 }

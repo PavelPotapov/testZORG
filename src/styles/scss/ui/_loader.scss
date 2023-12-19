@@ -45,6 +45,20 @@
 		height: var(--clock-hour-length);
 		animation-duration: 15s;
 	}
+
+	&__overlay {
+		position: fixed;
+		top: 75px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		backdrop-filter: blur(8px);
+		z-index: 2;
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
 }
 
 @keyframes spin {

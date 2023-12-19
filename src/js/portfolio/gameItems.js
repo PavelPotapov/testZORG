@@ -5,14 +5,12 @@ export class GameItemsHelper {
 		this.selectors = {
 			gameItems: "[data-js='game-item']",
 			portfolioContent: "[data-js='portfolio-content']",
-			loader: "[data-js='clock-loader']",
 		}
 		this.state = {
 			isRequesting: false,
 		}
 
 		this.classes = {
-			loaderActive: "clock-loader--active",
 			gameItem: "portfolio__item",
 			gameItemImage: "portfolio__item-img",
 		}
@@ -31,7 +29,6 @@ export class GameItemsHelper {
 			this.selectors.portfolioContent
 		)
 		this.gameItems = document.querySelectorAll(this.selectors.gameItems)
-		this.loader = document.querySelector(this.selectors.loader)
 	}
 
 	clearContents() {
@@ -43,14 +40,6 @@ export class GameItemsHelper {
 				reject()
 			}
 		})
-	}
-
-	showLoader() {
-		this.loader.classList.add(this.classes.loaderActive)
-	}
-
-	hideLoader() {
-		this.loader.classList.remove(this.classes.loaderActive)
 	}
 
 	createItems(itemsInfo) {

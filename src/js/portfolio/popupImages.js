@@ -3,10 +3,14 @@ import {
 	createElement,
 	disableScroll,
 	clearChildElements,
+	enableScroll,
 } from "../utils"
 
 class PopupHelper {
 	constructor(options) {
+		if (!PopupHelper.instance) {
+			PopupHelper.instance = this
+		}
 		this.popup = document.querySelector(`[data-js="popup-block"]`)
 
 		this.state = {
@@ -21,7 +25,7 @@ class PopupHelper {
 			date: `[data-js="popup-date"]`,
 			title: `[data-js="popup-title"]`,
 			detail: `data-js-portfolio-detail`,
-			overlay: `[data-id="popup-overlay"]`,
+			overlay: `[data-js="popup-overlay"]`,
 			item: `[data-js="game-item"]`,
 			itemsContainer: `[data-js="portfolio-content"]`,
 		}
@@ -42,6 +46,7 @@ class PopupHelper {
 
 		this.findElements()
 		this.acceptEvents()
+		return PopupHelper.instance
 	}
 
 	findElements() {
@@ -109,7 +114,7 @@ class PopupHelper {
 			this.date = detailData.date
 			delay(1000).then(() => (this.popup.style.overflowY = "auto"))
 		} else {
-			document.documentElement.classList.toggle("disabled-scroll", false)
+			enableScroll()
 			this.popup.classList.toggle(this.classes.popup)
 			this.overlay.classList.toggle(this.classes.overlay)
 			this.popup.style.overflowY = "hidden"

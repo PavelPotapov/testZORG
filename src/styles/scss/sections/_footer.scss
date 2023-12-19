@@ -28,6 +28,11 @@
 		justify-self: start;
 		align-self: center;
 		grid-row: span 2;
+		@media screen and (max-width: 1020px) {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+		}
 	}
 
 	&__policy {

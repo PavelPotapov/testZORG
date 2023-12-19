@@ -8,7 +8,6 @@
 	<body>
 		<div class="flowContainer">
 			{{>header}}
-
 			<main>
 				<section class="portfolio">
 					<div class="container">
@@ -215,17 +214,8 @@
 								data-js="game-item"
 								data-js-portfolio-detail='{"images":["../img/team.png","../img/team.png","../img/team.png","../img/team.png","../img/team.png"],"logo":"../img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
 							>
-								<img
-									src="../img/team.png"
-									alt=""
-									class="portfolio__item-img"
-								/>
+								<img src="../img/team.png" alt="" class="portfolio__item-img" />
 							</div>
-							<!-- <div
-								class="portfolio__item"
-								data-js="game-item"
-								data-js-portfolio-detail='{"images":["../img/team.png","../img/team.png","../img/team.png"],"logo":"../img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-							></div>
 							<div
 								class="portfolio__item"
 								data-js="game-item"
@@ -345,35 +335,28 @@
 								class="portfolio__item"
 								data-js="game-item"
 								data-js-portfolio-detail='{"images":["../img/team.png","../img/team.png","../img/team.png"],"logo":"../img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
-							></div> -->
+							></div>
+							<div
+								class="portfolio__item"
+								data-js="game-item"
+								data-js-portfolio-detail='{"images":["../img/team.png","../img/team.png","../img/team.png"],"logo":"../img/team.png","title":"Brawl Royale","date":"25.05.2022","text":"Lorem ipsum dolor sit amet consectetur. Massa id lobortis viverra interdum."}'
+							></div>
 						</div>
 					</div>
 				</section>
 			</main>
 			{{>footer}}
 		</div>
-		<!-- Overlay & loaders -->
-		<div class="laptop-menu" data-id="laptop-menu">
-			<nav class="laptop-menu__nav">
-				<ul class="laptop-menu__list">
-					<li class="laptop-menu__item"><a href="#">Студия</a></li>
-					<li class="laptop-menu__item"><a href="#">Портфолио</a></li>
-					<li class="laptop-menu__item"><a href="#">Работа</a></li>
-					<li class="laptop-menu__item"><a href="#">Услуги</a></li>
-					<li class="laptop-menu__item"><a href="#">Контакты</a></li>
-				</ul>
-			</nav>
-
-			<div class="social">
-				<a class="block" href="tel:79028607651">+7 (902) 860-76-51</a>
-				<a class="block" href="mailto:m.zhvikovm@gmail.com"
-					>m.zhvikovm@gmail.com</a
-				>
-			</div>
-		</div>
-		<div class="laptop-menu__overlay" data-id="overlay"></div>
-		<div class="portfolio__overlay" data-id="popup-overlay"></div>
+		<!-- LaptopMenu -->
+		{{>laptopMenu}}
+		<!-- LaptopMenu Overlay -->
+		<div class="laptop-menu__overlay" data-js="overlay"></div>
+		<!-- Portfolio Overlay -->
+		<div class="portfolio__overlay" data-js="popup-overlay"></div>
+		<!-- Loader -->
+		<div class="clock-loader__overlay" data-js="loader-overlay"></div>
 		<div class="clock-loader" data-js="clock-loader"></div>
+
 		<script type="module" src="../js/main.js"></script>
 		<script type="module" src="../js/portfolio/popupImages.js"></script>
 		<script type="module" src="../js/portfolio/filter.js"></script>

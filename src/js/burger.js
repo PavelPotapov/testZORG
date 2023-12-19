@@ -1,7 +1,7 @@
 export default function () {
-	const burger = document.querySelector('[data-id="burger"]')
-	const laptopMenu = document.querySelector('[data-id="laptop-menu"]')
-	const laptopMenuOverlay = document.querySelector('[data-id="overlay"]')
+	const burger = document.querySelector('[data-js="burger"]')
+	const laptopMenu = document.querySelector('[data-js="laptop-menu"]')
+	const laptopMenuOverlay = document.querySelector('[data-js="overlay"]')
 	const html = document.documentElement
 	if (burger) {
 		burger.addEventListener("click", (e) => {

@@ -1,20 +1,28 @@
-
 export class AriaHidden {
 	constructor(selector, mobileQuerySize) {
-		this.instance = document.querySelector(selector)
+		this.selectors = {
+			nodeElement: selector,
+		}
+
 		this.mobileQuerySize = window.matchMedia(
 			`(max-width: ${mobileQuerySize}px)`
 		)
+
+		this.findElements()
 		this.firstInit()
 		this.bindEvents()
 	}
 
+	findElements() {
+		this.nodeElement = document.querySelector(this.selectors.nodeElement)
+	}
+
 	show() {
-		this.instance.setAttribute("aria-hidden", "true")
+		this.nodeElement.setAttribute("aria-hidden", "false")
 	}
 
 	hide() {
-		this.instance.setAttribute("aria-hidden", "false")
+		this.nodeElement.setAttribute("aria-hidden", "true")
 	}
 
 	firstInit() {
@@ -28,8 +36,10 @@ export class AriaHidden {
 	}
 
 	bindEvents() {
-		this.mobileQuerySize.addEventListener("change", this.changeView.bind(this))
+		this.mobileQuerySize.addEventListener("change", (e) => {
+			this.changeView(e)
+		})
 	}
 }
 
-
+new AriaHidden('[data-js="laptop-menu"]', 1000)

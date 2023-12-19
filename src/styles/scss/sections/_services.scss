@@ -115,7 +115,7 @@
 		color: $color-white;
 		text-align: center;
 		font-family: $font-main;
-		font-size: clamp(28px, 3vw, 64px);
+		font-size: clamp(28px, 4vw, 64px);
 		font-style: normal;
 		font-weight: 700;
 		line-height: 100.523%; /* 64.335px */
@@ -127,7 +127,7 @@
 		color: $color-white;
 		text-align: center;
 		font-family: $font-main;
-		font-size: clamp(17px, 3vw, 28px);
+		font-size: clamp(17px, 4vw, 28px);
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
@@ -156,6 +156,11 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			transition: all 0.3s;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.1);
+			}
 			@media screen and (max-width: 1000px) {
 				flex-basis: 30%;
 			}

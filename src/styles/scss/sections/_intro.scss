@@ -32,7 +32,7 @@
 	}
 
 	&__subtitle {
-		font-size: 24px;
+		font-size: clamp(14px, 4vw, 24px);
 		font-style: normal;
 		font-weight: 400;
 		line-height: 100.523%; /* 24.125px */
@@ -133,6 +133,7 @@
 	}
 
 	&__zorg-games-subtitle {
+		font-size: clamp(14px, 4vw, 24px);
 		width: 100%;
 		max-width: 540px;
 	}

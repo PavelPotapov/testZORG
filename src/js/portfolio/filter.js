@@ -1,11 +1,15 @@
 import { createElement, delay } from "../utils"
 import { popupHelper } from "./popupImages"
 import { GameItemsHelper } from "./gameItems"
+import { singleToneLoader } from "../loader"
 
 const gameItemsHelper = new GameItemsHelper()
 
 class FilterHelper {
 	constructor() {
+		if (!FilterHelper.instance) {
+			FilterHelper.instance = this
+		}
 		this.selectors = {
 			submitBtn: "[data-js='filter-submit']",
 			clearBtn: "[data-js='filter-clear']",
@@ -13,7 +17,6 @@ class FilterHelper {
 			filterList: "[data-js='filter-list']",
 			form: "[data-js='form-filter']",
 			checkboxes: "[data-js='filter-check']",
-			overlay: "[data-id='popup-overlay']",
 		}
 		this.state = {
 			filterActive: false,
@@ -26,13 +29,14 @@ class FilterHelper {
 			activeSubmit: "portfolio__filter-submit--active",
 			activeClearBtn: "portfolio__filter-clear--active",
 			hiddenClearBtn: "portfolio__filter-clear--hidden",
-			overlay: "active",
 		}
 
 		this.isSearching = false // был ли когда-то поиск, если да - то при клике на сброс фильтра будет вызывать submit для получения информации, если нет - то фильтр просто сбрасывает checkboxes
 		this.currentChecked = 0 //кол-во выбранных checkbox элементов
+		this.loader = singleToneLoader
 		this.findElements()
 		this.acceptEvents()
+		return FilterHelper.instance
 	}
 
 	findElements() {
@@ -48,7 +52,7 @@ class FilterHelper {
 	async createFilterRequest(url, formData) {
 		try {
 			gameItemsHelper.clearContents()
-			this.showLoader()
+			this.loader.showLoader()
 			const response = await fetch(url, { method: "POST", body: formData })
 
 			if (!response.ok) {
@@ -58,25 +62,13 @@ class FilterHelper {
 			const gameItems = await response.json()
 			return gameItems
 		} catch (error) {
-			this.hideLoader()
+			this.loader.hideLoader()
 			return error
 		}
 	}
 
-	hideLoader() {
-		document.documentElement.classList.remove("disabled-scroll")
-		gameItemsHelper.hideLoader()
-		this.overlay.classList.remove(this.classes.overlay)
-	}
-
-	showLoader() {
-		document.documentElement.classList.add("disabled-scroll")
-		gameItemsHelper.showLoader()
-		this.overlay.classList.add(this.classes.overlay)
-	}
-
 	submitHandler(e) {
-		function noneData() {
+		function emptyData() {
 			const info = createElement("p", {
 				style: "color: #fff; font-size: 20px; font-family: Montserrat",
 				"data-js": "game-item",
@@ -100,14 +92,14 @@ class FilterHelper {
 					gameItemsHelper.createItems(response)
 					popupHelper.findGameItems() //там же навешивается слушатель событий
 					delay(500).then(() => {
-						this.hideLoader()
+						this.loader.hideLoader()
 					})
 				} else {
-					noneData()
+					emptyData()
 				}
 			})
 			.catch((error) => {
-				noneData()
+				emptyData()
 			})
 	}
 
