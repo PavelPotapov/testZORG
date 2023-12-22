@@ -27,11 +27,11 @@ export class AriaHidden {
 		this.nodeElement = document.querySelector(this.selectors.nodeElement)
 	}
 
-	show() {
+	hide() {
 		this.nodeElement.setAttribute("aria-hidden", "false")
 	}
 
-	hide() {
+	show() {
 		this.nodeElement.setAttribute("aria-hidden", "true")
 	}
 

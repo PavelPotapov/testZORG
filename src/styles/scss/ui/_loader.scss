@@ -7,7 +7,7 @@
 	--clock-thickness: 0.2rem;
 
 	position: fixed;
-	z-index: 2;
+	z-index: 6;
 	display: none;
 	top: 40%;
 	left: 50%;
@@ -53,7 +53,7 @@
 		right: 0;
 		bottom: 0;
 		backdrop-filter: blur(8px);
-		z-index: 2;
+		z-index: 6;
 		display: none;
 		&.active {
 			display: block;

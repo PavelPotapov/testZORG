@@ -1,4 +1,4 @@
 import "./swiper"
 import "../styles/scss/main.scss"
-import { burger } from "./burger"
+import "./burger"
 import "./areaHidden"

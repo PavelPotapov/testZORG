@@ -11,7 +11,7 @@ const pages = [
 		path: resolve(__dirname, "../src/pages", "facility.html"),
 	},
 	{ name: "404", path: resolve(__dirname, "../src/pages", "404.html") },
-	{ name: "modal", path: resolve(__dirname, "../src/pages", "modal.html") },
+
 	{
 		name: "portfolio",
 		path: resolve(__dirname, "../src/pages", "portfolio.html"),

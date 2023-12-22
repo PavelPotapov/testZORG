@@ -79,7 +79,7 @@ export function clearChildElements(node) {
 export function createSuccessfulToast(text) {
 	Toastify({
 		text: text ?? "Данные успешно отправлены. Мы свяжемся с вами 🚀",
-		duration: 300000,
+		duration: 3000,
 		newWindow: true,
 		close: true,
 		gravity: "bottom", // `top` or `bottom`
@@ -98,7 +98,7 @@ export function createSuccessfulToast(text) {
 export function createErrorToast(text) {
 	Toastify({
 		text: text ?? "Что-то пошло не так, попробуйте позже 🤨",
-		duration: 300000,
+		duration: 3000,
 		newWindow: true,
 		close: true,
 		gravity: "bottom", // `top` or `bottom`

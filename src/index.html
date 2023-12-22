@@ -423,7 +423,14 @@
 							</a>
 						</div>
 						<div class="carrier__application">
-							<form action="#" class="carrier__application-form">
+							<form
+								action="/test"
+								method="post"
+								class="carrier__application-form"
+								name="contact-form-main-page"
+								accept-charset="utf-8"
+								data-js="contact-form-main-page"
+							>
 								<input
 									type="text"
 									class="carrier__application-input block"
@@ -500,7 +507,8 @@
 		<div class="clock-loader__overlay" data-js="loader-overlay"></div>
 		<div class="clock-loader" data-js="clock-loader"></div>
 		<!-- Scripts -->
-		<script type="module" src="./js/main.js"></script>
+		<!-- <script type="module" src="./js/main.js"></script> -->
+		<script type="module" src="./js/mainPage.js"></script>
 		<script type="module" src="./js/contactForm.js"></script>
 	</body>
 </html>

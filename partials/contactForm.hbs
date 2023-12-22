@@ -92,9 +92,11 @@
 		id="contact-form"
 		enctype="multipart/form-data"
 		data-js-details='{"url": "http://192.168.0.5:5000/form1"}'
+		name="contact-form"
 	>
 		<div class="contact-modal__input-container">
 			<input
+				name="name"
 				type="text"
 				class="input-text contact-modal__input"
 				placeholder="*Name"
@@ -102,6 +104,7 @@
 			/>
 
 			<input
+				name="email"
 				type="email"
 				class="input-text contact-modal__input"
 				placeholder="*Email"
@@ -111,6 +114,7 @@
 				class="contact-modal__input input-icon-container input-icon-container--telegram"
 			>
 				<input
+					name="telegram"
 					type="text"
 					class="input-text input-text--telegram"
 					placeholder="@example"
@@ -120,6 +124,7 @@
 				class="contact-modal__input input-icon-container input-icon-container--linkedin"
 			>
 				<input
+					name="linkedin"
 					type="text"
 					class="input-text input-text--linkedin contact-modal__input"
 					placeholder="linkedin"
@@ -141,6 +146,7 @@
 				<input
 					type="file"
 					class="input-file"
+					name="resume-file"
 					id="input-file"
 					title="Прикрепить резюме"
 				/>

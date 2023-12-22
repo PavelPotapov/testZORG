@@ -265,8 +265,9 @@ class ContactFormHelper {
 				createErrorToast()
 			}
 		} catch (err) {
-			this.loader.hideLoader()
 			createErrorToast()
+		} finally {
+			this.loader.hideLoader()
 		}
 	}
 
